@@ -1,0 +1,13 @@
+Proxy Design Pattern
+
+    We have two use case examples in the package.
+One for memory management and one for let's say a more secure way of interaction.
+The main idea is that the proxy will stay as a "middle man" between the client and the object the
+client thinks it's interacting.
+    There are many different implementations and use cases but the mechanism is the same:
+1.Make the proxy implement the "real object" interface(the subject interface) the one that the client
+  will work with;
+2.You will need a member variable of the "real object" in the proxy class(composition);
+3.Implement all methods the client will use(the interface implementation) such that you can modify them;
+4.Add what's necessary for your logic(verification, validation, loading etc.) and then
+  redirect the method call to the "real object" to do the work.
