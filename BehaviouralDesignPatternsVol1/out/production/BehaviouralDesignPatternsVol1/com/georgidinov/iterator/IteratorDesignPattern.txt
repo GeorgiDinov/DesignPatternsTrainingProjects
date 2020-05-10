@@ -1,0 +1,26 @@
+                                <<<Iterator Design Pattern>>>
+
+    The pattern provides solution for iteration over data structure without knowing
+what the data structure is.
+
+In the examples in the packages you will see implementations
+    Main participants are:
+
+1.The Aggregate(The Collection representative)
+2.The Iterator (The one that is going to iterate over the Aggregate)
+
+    Interface for the aggregate(collection) with one method getIterator which returns Iterator
+Interface for iterator with methods like getNext(), hasNext etc.
+The return type depends on what objects you will manipulate(store) in the aggregate
+
+                    -----Single Responsibility Principle-----
+    Aggregate has the responsibility to maintain the objects and a  method
+to get the appropriate iterator
+The Iterator has focus only for the iteration over the aggregate objects
+
+    Iterator has the same data structure type(as the Aggregate) and its been initialized in
+his constructor in the aggregate getIterator() method  implementation
+with the aggregate current data structure  passed over the iterator
+    Then the iterator for that aggregate implements all methods from the interface and performs
+the iteration when called
+

@@ -1,0 +1,40 @@
+
+                     <<<Chain Of Responsibility Design Pattern>>>
+
+    We have two examples in two separate packages, one for an ATM way of dispensing money
+and one simulating error handling / logging type of work.
+
+    Main idea behind the pattern is that we have participants(objects) who suppose to have
+attitude to a problem, or problems are chained.
+This is done through an interface who has in our case two methods, one to set the next in
+the chain, and method for the actual work.
+    Every concrete implementation "HAS A" reference to another
+concrete implementation(Programing to an interface).
+    Now if the object cannot perform a task, that task is forwarded to the next object in chain
+Also it is possible that the object can perform some portion of the task and then forward it
+through the chain(mind the ATM example there we have this type of work - if there is reminder
+from the $50 bill class only that reminder is sent for processing through the rest of the chain)
+    Steps:
+1. Set up an interface that all participant in the chain will implement;
+2. Define at least two methods in the interface:
+    -one for setting up reference to the next in the chain
+    -one for the actual work
+3.In the concrete implementations(classes) you'll need a
+    reference(object) to the next that will be set;
+4.The client is responsible to build the chain:
+    -either in his constructor(you will need a member variable),
+     or in some method(main method)
+5.It may need to add some messages or throw exceptions if you end up
+    with no object to do the work(run out of objects and reach the end of the chain).
+
+    In both examples there are a lot of small helper classes that may be confusing at first,
+    but if you look for the steps listed above you'll be fine.
+
+Some examples of the pattern in the JDK:
+    try{}catch{} - you may have more than one catch block and
+typically you try to catch more specific exceptions and going to more general ones.
+
+
+
+
+
