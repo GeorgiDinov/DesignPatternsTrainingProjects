@@ -1,0 +1,30 @@
+
+                                <<<Observer Design Pattern>>>
+
+    The Design Pattern idea is that we want to notify other objects
+that a particular object state has changed.
+
+The object which state is monitored by other objects is called the Subject.
+All of the objects that are monitoring the Subject object state are called Observers.
+
+                        Two basic variations Push and Poll
+
+    Push variation the Subject notifies the Observers
+and sends(sets through the Observer method) out the current state to all Observers.
+
+    Poll variation the Subject notifies the Observers
+and then every Observer gets(through Subject method call and possible Subject reference)
+the state of the Subject.
+
+    Subjects hold list of Observer objects with methods to subscribe, unsubscribe and notify.
+
+    Observers have update method and MAY or MAY NOT hold a reference to the Subject, but
+in most cases will have same fields like the Subject(in other words the state that they
+are interested in) and those fields will be updated through the update() method.
+
+ In the Poll variation there is one more method for the Subject which returns the desired
+from the Observers state. Then when notified every Observer(probably with Subject reference)
+calls the getUpdate/State method and sets its fields.
+
+    In both examples in the Subject class there is a method that simulates
+the change of state and triggers the notification mechanism.
